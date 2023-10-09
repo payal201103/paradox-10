@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #111;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .toggle {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            background: url(https://th.bing.com/th/id/OIP.MO13Yb2PjehyQD7s6Lsx_gHaHa?pid=ImgDet&rs=1);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 30px;
+        }
+        .slider{
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background: #000;
+        }
+        .slider .imgBx{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            transition-delay: 0s;
+            z-index: 1;
+            clip-path: circle(0px at center);
+        }
+        .slider input[type="radio"]:checked +.imgBx{
+            z-index: 10;
+            clip-path: circle(1000px at center);
+            transition-delay: 0.75s;
+        }
+
+
+        .slider .imgBx img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slider .imgBx .content{
+            position: relative;
+            text-align: center;
+            max-width: 800px;
+        }
+        .slider .imgBx .content h2{
+            font-size: 6em;
+            line-height: 1em;
+        }
+        .slider .imgBx .content p{
+            font-size: 1.1em;
+        }
+        .slider .imgBx .content a{
+            position: relative;
+            display: inline-block;
+            background: #fff;
+            padding: 10px 30px;
+            font-weight: 500;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        .slider input[type="radio"]{
+            position: relative;
+            z-index: 1000;
+            margin: 5px;
+            margin-bottom: 40px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        @media (max-width:768px){
+            header{
+                padding: 20px 40px ;
+            }
+            .slider .imgBx{
+                padding: 40px;
+            }
+            .slider .imgBx .content h2{
+                font-size: 3em;
+            }
+            .slider .imgBx .content p{
+                font-size: 1em;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <div class="toggle"></div>
+    </header>
+
+    <div class="slider">
+        <input type="radio" name="slider" checked>
+        <div class="imgBx">
+            <img src="https://images.unsplash.com/photo-1552089123-2d26226fc2b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGZydWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            <div class="content">
+                <h2>Slide One</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio explicabo, reiciendis repellat
+                    eligendi enim aliquid laudantium iure ab accusamus repudiandae vitae quaerat aliquam sint omnis eius
+                    beatae, porro ipsa. Sapiente eum quod, provident eligendi nemo hic eos autem nulla fugiat inventore
+                    tempora iste illum, rerum blanditiis illo? Tenetur ipsam laborum molestias! Ullam cupiditate eius
+                    provident ut perferendis dignissimos corporis architecto.</p>
+                    <a href="#">Read more</a>
+            </div>
+        </div>
+        <input type="radio" name="slider">
+        <div class="imgBx">
+            <img src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            <div class="content">
+                <h2>Slide Two</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio explicabo, reiciendis repellat
+                    eligendi enim aliquid laudantium iure ab accusamus repudiandae vitae quaerat aliquam sint omnis eius
+                    beatae, porro ipsa. Sapiente eum quod, provident eligendi nemo hic eos autem nulla fugiat inventore
+                    tempora iste illum, rerum blanditiis illo? Tenetur ipsam laborum molestias! Ullam cupiditate eius
+                    provident ut perferendis dignissimos corporis architecto.</p>
+                    <a href="#">Read more</a>
+            </div>
+        </div>
+        <input type="radio" name="slider">
+        <div class="imgBx">
+            <img src="https://images.unsplash.com/photo-1579613832125-5d34a13ffe2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            <div class="content">
+                <h2>Slide Three</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio explicabo, reiciendis repellat
+                    eligendi enim aliquid laudantium iure ab accusamus repudiandae vitae quaerat aliquam sint omnis eius
+                    beatae, porro ipsa. Sapiente eum quod, provident eligendi nemo hic eos autem nulla fugiat inventore
+                    tempora iste illum, rerum blanditiis illo? Tenetur ipsam laborum molestias! Ullam cupiditate eius
+                    provident ut perferendis dignissimos corporis architecto.</p>
+                    <a href="#">Read more</a>
+            </div>
+        </div>
+        <input type="radio" name="slider">
+        <div class="imgBx">
+            <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZydWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            <div class="content">
+                <h2>Slide Four</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio explicabo, reiciendis repellat
+                    eligendi enim aliquid laudantium iure ab accusamus repudiandae vitae quaerat aliquam sint omnis eius
+                    beatae, porro ipsa. Sapiente eum quod, provident eligendi nemo hic eos autem nulla fugiat inventore
+                    tempora iste illum, rerum blanditiis illo? Tenetur ipsam laborum molestias! Ullam cupiditate eius
+                    provident ut perferendis dignissimos corporis architecto.</p>
+                    <a href="#">Read more</a>
+            </div>
+        </div>
+        <input type="radio" name="slider">
+        <div class="imgBx">
+            <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZnJ1aXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            <div class="content">
+                <h2>Slide Five</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio explicabo, reiciendis repellat
+                    eligendi enim aliquid laudantium iure ab accusamus repudiandae vitae quaerat aliquam sint omnis eius
+                    beatae, porro ipsa. Sapiente eum quod, provident eligendi nemo hic eos autem nulla fugiat inventore
+                    tempora iste illum, rerum blanditiis illo? Tenetur ipsam laborum molestias! Ullam cupiditate eius
+                    provident ut perferendis dignissimos corporis architecto.</p>
+                    <a href="#">Read more</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

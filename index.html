@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .bgImage{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            animation: bgChange 20s linear infinite;
+        }
+
+        @keyframes  bgChange{
+            0%{
+                background-image: url(https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);
+            }
+            20%{
+                background-image: url(https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60);
+            }
+            25%{
+                background-image: url(https://plus.unsplash.com/premium_photo-1673697239936-c2599b0b0498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60);
+            }
+            45%{
+                background-image: url(https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60);
+            }
+            50%{
+                background-image: url(https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60);
+            }
+            70%{
+                background-image: url(https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60);
+            }
+            75%{
+                background-image: url(https://images.unsplash.com/photo-1458668383970-8ddd3927deed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60);
+            }
+            95%{
+                background-image: url(https://images.unsplash.com/photo-1682695794816-7b9da18ed470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60);
+            }
+        }
+
+
+
+
+        .overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0,0,0,0.3);
+        }
+        .content{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 2;
+        }
+        .content h1{
+            font-size: 60px;
+            margin-bottom: 0px;
+        }
+        .content h1 span{
+            color: #00bf13;
+        }
+        .content p{
+            font-size: 18px;
+            width: 60%;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        button{
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            background-color: #00bf13;
+            padding: 14px 22px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            transition: .5s;
+        }
+        button:hover{
+            background-color: rgb(47, 39, 27);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bgImage">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <h1>Wonderful <span>Nature</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates fugit magnam, cupiditate nesciunt
+                repudiandae atque impedit. Rerum magni, eos quae doloremque et laudantium consequatur quis beatae
+                exercitationem ad quam quod. </p>
+                <button>Explore Now</button>
+        </div>
+    </div>
+</body>
+
+</html>
